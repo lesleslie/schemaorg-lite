@@ -1,4 +1,4 @@
-# schemaorg Python
+# schemaorg-lite Python
 
 This module will serve functions for researchers and users to apply schema.org
 definitions to their datasets, software, and other worldly things. For 
