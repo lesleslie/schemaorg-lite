@@ -1,0 +1,56 @@
+[tool.pdm]
+
+[project]
+name = "schemaorg"
+version = "0.1.2"
+description = "Python functions for applied use of schema.org"
+authors = [
+    {name = "Vanessa Sochat",email = "vsoch@users.noreply.github.com"},
+]
+dependencies = [
+    "msgspec>=0.13.1",
+    "loguru>=0.6.0",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "LICENSE"}
+keywords = ["openschemas", "schema.org"]
+maintainers = [
+    {name = "lesleslie", email = "les@wedgwoodwebworks.com"},
+    {name = "Vanessa Sochat", email = "vsoch@users.noreply.github.com"},
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Operating System :: Unix",
+    "Programming Language :: C",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development",
+]
+
+[project.urls]
+Homepage = "https://github.com/openschemas/schemaorg"
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
+
+[tool.isort]
+profile = "black"
+force_single_line = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "pragma: nocover",
+    "except NotImplementedError",
+    "raise NotImplementedError",
+    "if TYPE_CHECKING:",
+]
+
+[tool.deptry]
+
+[tool.refurb]
