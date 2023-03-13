@@ -1,4 +1,8 @@
 [tool.pdm]
+[tool.pdm.dev-dependencies]
+dev = [
+    "ipython>=8.11.0",
+]
 
 [project]
 name = "schemaorg"
