@@ -15,6 +15,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "attrs"
+version = "22.2.0"
+requires_python = ">=3.6"
+summary = "Classes Without Boilerplate"
+
+[[package]]
 name = "backcall"
 version = "0.2.0"
 summary = "Specifications for callback functions passed in to an API"
@@ -35,6 +41,12 @@ summary = "Decorators for Humans"
 name = "executing"
 version = "1.2.0"
 summary = "Get the currently executing AST node of a frame, and other information"
+
+[[package]]
+name = "iniconfig"
+version = "2.0.0"
+requires_python = ">=3.7"
+summary = "brain-dead simple config-ini parsing"
 
 [[package]]
 name = "ipython"
@@ -91,6 +103,12 @@ requires_python = ">=3.8"
 summary = "A fast serialization and validation library, with builtin support for JSON, MessagePack, YAML, and TOML."
 
 [[package]]
+name = "packaging"
+version = "23.0"
+requires_python = ">=3.7"
+summary = "Core utilities for Python packages"
+
+[[package]]
 name = "parso"
 version = "0.8.3"
 requires_python = ">=3.6"
@@ -108,6 +126,12 @@ dependencies = [
 name = "pickleshare"
 version = "0.7.5"
 summary = "Tiny 'shelve'-like database with concurrency support"
+
+[[package]]
+name = "pluggy"
+version = "1.0.0"
+requires_python = ">=3.6"
+summary = "plugin and hook calling mechanisms for python"
 
 [[package]]
 name = "prompt-toolkit"
@@ -133,6 +157,19 @@ name = "pygments"
 version = "2.14.0"
 requires_python = ">=3.6"
 summary = "Pygments is a syntax highlighting package written in Python."
+
+[[package]]
+name = "pytest"
+version = "7.2.2"
+requires_python = ">=3.7"
+summary = "pytest: simple powerful testing with Python"
+dependencies = [
+    "attrs>=19.2.0",
+    "colorama; sys_platform == \"win32\"",
+    "iniconfig",
+    "packaging",
+    "pluggy<2.0,>=0.12",
+]
 
 [[package]]
 name = "six"
@@ -169,7 +206,7 @@ summary = "A small Python utility to set file creation time on Windows"
 
 [metadata]
 lock_version = "4.1"
-content_hash = "sha256:9550a6b44bd32e6c1dc4d301d52d4f8c6277c7cc50fe0ce4e66a192d36a8c9e8"
+content_hash = "sha256:d85524f415eb10daebcc6af1b832a7bfef421a51e97f9b05e372264edefeb718"
 
 [metadata.files]
 "appnope 0.1.3" = [
@@ -179,6 +216,10 @@ content_hash = "sha256:9550a6b44bd32e6c1dc4d301d52d4f8c6277c7cc50fe0ce4e66a192d3
 "asttokens 2.2.1" = [
     {url = "https://files.pythonhosted.org/packages/c8/e3/b0b4f32162621126fbdaba636c152c6b6baec486c99f48686e66343d638f/asttokens-2.2.1.tar.gz", hash = "sha256:4622110b2a6f30b77e1473affaa97e711bc2f07d3f10848420ff1898edbe94f3"},
     {url = "https://files.pythonhosted.org/packages/f3/e1/64679d9d0759db5b182222c81ff322c2fe2c31e156a59afd6e9208c960e5/asttokens-2.2.1-py2.py3-none-any.whl", hash = "sha256:6b0ac9e93fb0335014d382b8fa9b3afa7df546984258005da0b9e7095b3deb1c"},
+]
+"attrs 22.2.0" = [
+    {url = "https://files.pythonhosted.org/packages/21/31/3f468da74c7de4fcf9b25591e682856389b3400b4b62f201e65f15ea3e07/attrs-22.2.0.tar.gz", hash = "sha256:c9227bfc2f01993c03f68db37d1d15c9690188323c067c641f1a35ca58185f99"},
+    {url = "https://files.pythonhosted.org/packages/fb/6e/6f83bf616d2becdf333a1640f1d463fef3150e2e926b7010cb0f81c95e88/attrs-22.2.0-py3-none-any.whl", hash = "sha256:29e95c7f6778868dbd49170f98f8818f78f3dc5e0e37c0b1f474e3561b240836"},
 ]
 "backcall 0.2.0" = [
     {url = "https://files.pythonhosted.org/packages/4c/1c/ff6546b6c12603d8dd1070aa3c3d273ad4c07f5771689a7b69a550e8c951/backcall-0.2.0-py2.py3-none-any.whl", hash = "sha256:fbbce6a29f263178a1f7915c1940bde0ec2b2a967566fe1c65c1dfb7422bd255"},
@@ -195,6 +236,10 @@ content_hash = "sha256:9550a6b44bd32e6c1dc4d301d52d4f8c6277c7cc50fe0ce4e66a192d3
 "executing 1.2.0" = [
     {url = "https://files.pythonhosted.org/packages/28/3c/bc3819dd8b1a1588c9215a87271b6178cc5498acaa83885211f5d4d9e693/executing-1.2.0-py2.py3-none-any.whl", hash = "sha256:0314a69e37426e3608aada02473b4161d4caf5a4b244d1d0c48072b8fee7bacc"},
     {url = "https://files.pythonhosted.org/packages/8f/ac/89ff37d8594b0eef176b7cec742ac868fef853b8e18df0309e3def9f480b/executing-1.2.0.tar.gz", hash = "sha256:19da64c18d2d851112f09c287f8d3dbbdf725ab0e569077efb6cdcbd3497c107"},
+]
+"iniconfig 2.0.0" = [
+    {url = "https://files.pythonhosted.org/packages/d7/4b/cbd8e699e64a6f16ca3a8220661b5f83792b3017d0f79807cb8708d33913/iniconfig-2.0.0.tar.gz", hash = "sha256:2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"},
+    {url = "https://files.pythonhosted.org/packages/ef/a6/62565a6e1cf69e10f5727360368e451d4b7f58beeac6173dc9db836a5b46/iniconfig-2.0.0-py3-none-any.whl", hash = "sha256:b6a85871a79d2e3b22d2d1b94ac2824226a63c6b741c88f7ae975f18b6778374"},
 ]
 "ipython 8.11.0" = [
     {url = "https://files.pythonhosted.org/packages/a7/e1/7c277c1dd0b0520bf07070c3921ff1986a2eb3db704ad91f0ac46fb42d8f/ipython-8.11.0.tar.gz", hash = "sha256:735cede4099dbc903ee540307b9171fbfef4aa75cfcacc5a273b2cda2f02be04"},
@@ -243,6 +288,10 @@ content_hash = "sha256:9550a6b44bd32e6c1dc4d301d52d4f8c6277c7cc50fe0ce4e66a192d3
     {url = "https://files.pythonhosted.org/packages/f4/1b/60e942c286ad2dd05f0d5d5f258ae79eda095d57aecc3f1b1a1c339c8f39/msgspec-0.13.1-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:348415004e907c856e22884485c9f91dc8f39317ce365b0881a08ac35f234afe"},
     {url = "https://files.pythonhosted.org/packages/fb/6c/8852f811b9814fac0ed8c4c87413ee4c1f75f54bc1cc013f8aea22a37ded/msgspec-0.13.1-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:494de96dc6ad90c2f3ba96130591ade518dfd019be767e6030c73ea3e9eb6df9"},
 ]
+"packaging 23.0" = [
+    {url = "https://files.pythonhosted.org/packages/47/d5/aca8ff6f49aa5565df1c826e7bf5e85a6df852ee063600c1efa5b932968c/packaging-23.0.tar.gz", hash = "sha256:b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"},
+    {url = "https://files.pythonhosted.org/packages/ed/35/a31aed2993e398f6b09a790a181a7927eb14610ee8bbf02dc14d31677f1c/packaging-23.0-py3-none-any.whl", hash = "sha256:714ac14496c3e68c99c29b00845f7a2b85f3bb6f1078fd9f72fd20f0570002b2"},
+]
 "parso 0.8.3" = [
     {url = "https://files.pythonhosted.org/packages/05/63/8011bd08a4111858f79d2b09aad86638490d62fbf881c44e434a6dfca87b/parso-0.8.3-py2.py3-none-any.whl", hash = "sha256:c001d4636cd3aecdaf33cbb40aebb59b094be2a74c556778ef5576c175e19e75"},
     {url = "https://files.pythonhosted.org/packages/a2/0e/41f0cca4b85a6ea74d66d2226a7cda8e41206a624f5b330b958ef48e2e52/parso-0.8.3.tar.gz", hash = "sha256:8c07be290bb59f03588915921e29e8a50002acaf2cdc5fa0e0114f91709fafa0"},
@@ -254,6 +303,10 @@ content_hash = "sha256:9550a6b44bd32e6c1dc4d301d52d4f8c6277c7cc50fe0ce4e66a192d3
 "pickleshare 0.7.5" = [
     {url = "https://files.pythonhosted.org/packages/9a/41/220f49aaea88bc6fa6cba8d05ecf24676326156c23b991e80b3f2fc24c77/pickleshare-0.7.5-py2.py3-none-any.whl", hash = "sha256:9649af414d74d4df115d5d718f82acb59c9d418196b7b4290ed47a12ce62df56"},
     {url = "https://files.pythonhosted.org/packages/d8/b6/df3c1c9b616e9c0edbc4fbab6ddd09df9535849c64ba51fcb6531c32d4d8/pickleshare-0.7.5.tar.gz", hash = "sha256:87683d47965c1da65cdacaf31c8441d12b8044cdec9aca500cd78fc2c683afca"},
+]
+"pluggy 1.0.0" = [
+    {url = "https://files.pythonhosted.org/packages/9e/01/f38e2ff29715251cf25532b9082a1589ab7e4f571ced434f98d0139336dc/pluggy-1.0.0-py2.py3-none-any.whl", hash = "sha256:74134bbf457f031a36d68416e1509f34bd5ccc019f0bcc952c7b909d06b37bd3"},
+    {url = "https://files.pythonhosted.org/packages/a1/16/db2d7de3474b6e37cbb9c008965ee63835bba517e22cdb8c35b5116b5ce1/pluggy-1.0.0.tar.gz", hash = "sha256:4224373bacce55f955a878bf9cfa763c1e360858e330072059e10bad68531159"},
 ]
 "prompt-toolkit 3.0.38" = [
     {url = "https://files.pythonhosted.org/packages/4b/bb/75cdcd356f57d17b295aba121494c2333d26bfff1a837e6199b8b83c415a/prompt_toolkit-3.0.38.tar.gz", hash = "sha256:23ac5d50538a9a38c8bde05fecb47d0b403ecd0662857a86f886f798563d5b9b"},
@@ -270,6 +323,10 @@ content_hash = "sha256:9550a6b44bd32e6c1dc4d301d52d4f8c6277c7cc50fe0ce4e66a192d3
 "pygments 2.14.0" = [
     {url = "https://files.pythonhosted.org/packages/0b/42/d9d95cc461f098f204cd20c85642ae40fbff81f74c300341b8d0e0df14e0/Pygments-2.14.0-py3-none-any.whl", hash = "sha256:fa7bd7bd2771287c0de303af8bfdfc731f51bd2c6a47ab69d117138893b82717"},
     {url = "https://files.pythonhosted.org/packages/da/6a/c427c06913204e24de28de5300d3f0e809933f376e0b7df95194b2bb3f71/Pygments-2.14.0.tar.gz", hash = "sha256:b3ed06a9e8ac9a9aae5a6f5dbe78a8a58655d17b43b93c078f094ddc476ae297"},
+]
+"pytest 7.2.2" = [
+    {url = "https://files.pythonhosted.org/packages/b2/68/5321b5793bd506961bd40bdbdd0674e7de4fb873ee7cab33dd27283ad513/pytest-7.2.2-py3-none-any.whl", hash = "sha256:130328f552dcfac0b1cec75c12e3f005619dc5f874f0a06e8ff7263f0ee6225e"},
+    {url = "https://files.pythonhosted.org/packages/b9/29/311895d9cd3f003dd58e8fdea36dd895ba2da5c0c90601836f7de79f76fe/pytest-7.2.2.tar.gz", hash = "sha256:c99ab0c73aceb050f68929bc93af19ab6db0558791c6a0715723abe9d0ade9d4"},
 ]
 "six 1.16.0" = [
     {url = "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
