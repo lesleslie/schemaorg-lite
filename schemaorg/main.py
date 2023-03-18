@@ -45,7 +45,7 @@ class Schema(object):
         if not re.search("^http", base):
             logger.error(f"{base} must be a valid URL starting with http or https.")
 
-        logger.info(f"Specification base set to {base}")
+        # logger.debug(f"Specification base set to {base}")
         self.base = base
 
     def _set_version(self, version):
@@ -72,7 +72,7 @@ class Schema(object):
             logger.warning(f"Version {version} is not found in the data folder.")
             version = available[-1]
 
-        logger.info(f"Using Version {version}")
+        # logger.info(f"Using Version {version}")
         self.version = version
 
     # Properties
