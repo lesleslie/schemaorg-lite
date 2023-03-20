@@ -224,7 +224,7 @@ class Schema(object):
             return
 
         self._set_type(schema_type)
-        logger.info(f"Found {self.url}")
+        # logger.info(f"Found {self.url}")
 
         # Load the type, or save to the object
         self.type_spec = typs[self.type]
