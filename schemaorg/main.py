@@ -11,7 +11,8 @@ from schemaorg.data import read_types_csv
 class Schema(object):
     def __init__(self, schema_type, version=None, base=None):
         self.type = None
-        self.properties = {}
+        self.properties = dict()
+        self.loaded = dict()
 
         # Does the user want a custom base?
         self._set_base(base)
