@@ -3,3 +3,6 @@ __pycache__
 schemaorg.egg-info
 build
 dist
+/.pdm-python
+/.pdm.toml
+/__pypackages__/
