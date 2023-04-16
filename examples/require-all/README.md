@@ -3,12 +3,12 @@
 In this example, we are going to walk through creating a recipe for a [SportsEvent](https://schema.org/SportsEvent) that requires all fields. First, install schemaorg:
 
 ```bash
-pip install schemaorg
+pip install schemaorg_lite
 ```
 or
 ```bash
 git clone https://www.github.com/openschemas/schemaorg
-cd schemaorg
+cd schemaorg_lite
 python setup.py install
 ```
 
@@ -30,7 +30,8 @@ schemas:
 and load into Python
 
 ```python
-from schemaorg.utils import read_yaml, write_yaml
+from schemaorg_lite.utils import read_yaml, write_yaml
+
 recipe = read_yaml('empty.yml')
 ```
 
@@ -39,7 +40,8 @@ recipe = read_yaml('empty.yml')
 At this point, we need to get all the properties for a SportEvent.
 
 ```python
-from schemaorg.main import Schema
+from schemaorg_lite.main import Schema
+
 schema = Schema("SportsEvent")
 ```
 

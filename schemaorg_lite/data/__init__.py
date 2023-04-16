@@ -1,7 +1,7 @@
 import csv
 from pathlib import Path
 
-from schemaorg.main import logger
+from schemaorg_lite.main import logger
 
 
 def get_installdir():
@@ -59,12 +59,12 @@ def get_versions():
 
 
 def get_schemaorg_version():
-    """determine the schemaorg version to use based on an environmental variable
+    """determine the schemaorg_lite version to use based on an environmental variable
     first followed by  using the latest.
     """
     version = get_versions()[-1]
 
-    logger.debug("schemaorg version %s selected" % version)
+    logger.debug("schemaorg_lite version %s selected" % version)
     return version
 
 
@@ -78,7 +78,7 @@ def get_release(version=None):
 
 def get_database():
     """get the data folder with "release" and "ext" subfolders"""
-    return get_installdir() / "schemaorg" / "data"
+    return get_installdir() / "schemaorg_lite" / "data"
 
 
 # courtesy functions for schema.org exports
@@ -90,8 +90,8 @@ ext-attic-properties.csv   ext-meta-properties.csv
 ext-attic-types.csv        ext-meta-types.csv
 ext-auto-properties.csv    ext-pending-properties.csv
 ext-auto-types.csv         ext-pending-types.csv
-ext-bib-properties.csv     schemaorg-all-https-properties.csv
-ext-bib-types.csv          schemaorg-all-http-types.csv
+ext-bib-properties.csv     schemaorg_lite-all-https-properties.csv
+ext-bib-types.csv          schemaorg_lite-all-http-types.csv
 """
 
 
@@ -106,7 +106,7 @@ def read_properties_csv(keyfield="id", version=None):
     version: release version under data/releases to use, defaults to latest
     """
     release_dir = get_release(version=version)
-    filename = release_dir / "schemaorg-all-https-properties.csv"
+    filename = release_dir / "schemaorg_lite-all-https-properties.csv"
     return read_csv(filename, keyfield=keyfield)
 
 
@@ -120,7 +120,7 @@ def read_types_csv(keyfield="label", version=None):
     version: release version under data/releases to use, defaults to latest
     """
     release_dir = get_release(version=version)
-    filename = release_dir / "schemaorg-all-https-types.csv"
+    filename = release_dir / "schemaorg_lite-all-https-types.csv"
     return read_csv(filename, keyfield=keyfield)
 
 

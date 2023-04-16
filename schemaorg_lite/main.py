@@ -2,10 +2,10 @@ import re
 from contextlib import suppress
 
 from loguru import logger
-from schemaorg.data import find_similar_types
-from schemaorg.data import get_versions
-from schemaorg.data import read_properties_csv
-from schemaorg.data import read_types_csv
+from schemaorg_lite.data import find_similar_types
+from schemaorg_lite.data import get_versions
+from schemaorg_lite.data import read_properties_csv
+from schemaorg_lite.data import read_types_csv
 
 
 class Schema(object):
@@ -65,9 +65,9 @@ class Schema(object):
         version = str(version)
 
         # Version not valid, default to use latest
-        if not version in available:
-            logger.warning(f"Version {version} is not found in the data folder.")
-            version = available[-1]
+        if version not in available:
+    logger.warning(f"Version {version} is not found in the data folder.")
+    version = available[-1]
 
         # logger.info(f"Using Version {version}")
         self.version = version
@@ -84,7 +84,7 @@ class Schema(object):
         """
         if value not in ["", None, [], ()]:
             if name in self._properties:
-                lookup = self._properties[name]
+                # self._properties[name]
                 self.properties[name] = value
                 logger.debug(f"{name} set to {value}")
 

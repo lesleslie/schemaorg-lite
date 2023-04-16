@@ -4,12 +4,12 @@ In this example, we are going to walk through creating a [SportsEvent](https://s
 yet. You can do either:
 
 ```bash
-pip install schemaorg
+pip install schemaorg_lite
 ```
 or
 ```bash
 git clone https://www.github.com/openschemas/schemaorg
-cd schemaorg
+cd schemaorg_lite
 python setup.py install
 ```
 
@@ -55,8 +55,8 @@ Next we want to load in the recipe, create an empty schema, and validate it.
 Load needed modules:
 
 ```python
-from schemaorg.main.parse import RecipeParser
-from schemaorg.main import Schema
+from schemaorg_lite.main.parse import RecipeParser
+from schemaorg_lite.main import Schema
 ```
 
 And then create an empty SportsEvent
@@ -192,7 +192,8 @@ Out[31]:
 You can export a json-ld embedded html template too:
 
 ```python
-from schemaorg.templates.google import make_dataset
+from schemaorg_lite.templates.google import make_dataset
+
 dataset = make_dataset(schema, "index.html")
 print(dataset)
 ```
