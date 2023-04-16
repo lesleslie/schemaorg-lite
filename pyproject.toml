@@ -18,7 +18,7 @@ dependencies = [
 ]
 requires-python = ">=3.11"
 readme = "README.md"
-license = "BSD-3-Clause"
+license = { text = "BSD-3-Clause" }
 keywords = ["openschemas", "schema.org"]
 maintainers = [
     {name = "lesleslie", email = "les@wedgwoodwebworks.com"},
