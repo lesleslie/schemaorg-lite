@@ -5,7 +5,7 @@ schemaorg: [https://www.github.com/schemaorg/schemaorg](https://www.github.com/s
 It will gather search engine metadata, from schema.org, and produce json-ld that can be embedded in a web
 page or similar, intended to power search.
 
-We provide schema.org 15.0 and later.
+We provide schema.org 23.0 and later.
 
 ## What is this not?
 

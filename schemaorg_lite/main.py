@@ -9,7 +9,7 @@ from schemaorg_lite.data import read_types_csv
 
 
 class Schema(object):
-    def __init__(self, schema_type, version=None, base=None):
+    def __init__(self, schema_type, version=None, base=None) -> None:
         self.type = None
         self.properties = dict()
         self.loaded = dict()
@@ -19,15 +19,15 @@ class Schema(object):
         self._set_version(version)
         self.load_type(schema_type)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.type
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return self.__str__()
 
     # Validate
 
-    def _set_base(self, base):
+    def _set_base(self, base) -> None:
         """set the base variable for the object, only if it has been defined
 
         Parameters
@@ -45,7 +45,7 @@ class Schema(object):
         # logger.debug(f"Specification base set to {base}")
         self.base = base
 
-    def _set_version(self, version):
+    def _set_version(self, version) -> None:
         """ensure the version folder exists, or is installed with the
         application, and set to be used for the schema. This should only
         be called upon init when the data (with corresponding version)
@@ -66,15 +66,14 @@ class Schema(object):
 
         # Version not valid, default to use latest
         if version not in available:
-    logger.warning(f"Version {version} is not found in the data folder.")
-    version = available[-1]
-
-        # logger.info(f"Using Version {version}")
-        self.version = version
+            logger.warning(f"Version {version} is not found in the data folder.")
+            version = available[-1]
+            # logger.info(f"Using Version {version}")
+            self.version = version
 
     # Properties
 
-    def add_property(self, name, value):
+    def add_property(self, name: str, value) -> None:
         """add a property, only given that it's defined under self._properties.
 
         Parameters
@@ -88,7 +87,7 @@ class Schema(object):
                 self.properties[name] = value
                 logger.debug(f"{name} set to {value}")
 
-    def remove_property(self, name):
+    def remove_property(self, name: str) -> None:
         """remove a property, meaning the instance property > self.properties
 
         Parameters
@@ -99,7 +98,7 @@ class Schema(object):
 
     # Load
 
-    def load_type(self, schema_type):
+    def load_type(self, schema_type) -> None:
         """load a type. Expected to be called upon init, but also allowed
         to be called once already loaded. The type and properties must be
         loaded together to ensure being in sync.
@@ -150,7 +149,7 @@ class Schema(object):
 
     # Properties
 
-    def _load_custom_props(self, key="mapping", field="property"):
+    def _load_custom_props(self, key: str = "mapping", field: str = "property") -> None:
         """load custom properties will extract properties into the Schema from
         a list, where some field in the list is the ID to give to the
         self._properties dictionary. This function assumes the openschemas
@@ -169,7 +168,7 @@ class Schema(object):
         props = self.loaded[key]
 
         for prop in props:
-            name = "https://schema.org/%s" % prop[field]
+            name = f"https://schema.org/{prop[field]}"
 
             self._properties[prop[field]] = dict()
 
@@ -185,7 +184,7 @@ class Schema(object):
             self._properties[prop[field]].update(prop)
         logger.info(f"{self.type}: found {len(self._properties)} properties")
 
-    def _load_props(self):
+    def _load_props(self) -> None:
         """load properties based on the type defined for the object. Can
         (or should) only be called with load_type, so the two are in sync
         This function is strict in that it will error if there is a missing
@@ -208,7 +207,7 @@ class Schema(object):
 
             logger.info(f"{self.type}: found {len(self._properties)} properties")
 
-    def _load_type(self, schema_type):
+    def _load_type(self, schema_type) -> None:
         """load the type file, depending on the set version. This means:
         1. Setting the url to be the base (schema.org) followed by type
         2. Loading the types csv based on the version defined for the object
@@ -230,7 +229,7 @@ class Schema(object):
         # Load the type, or save to the object
         self.type_spec = typs[self.type]
 
-    def _set_type(self, schema_type):
+    def _set_type(self, schema_type) -> None:
         """Given a string schema type, load the type from the lookup dictionary,
         and set the url of the class from the base.
 
@@ -244,7 +243,7 @@ class Schema(object):
         # Assemble the type url
         self.url = "/".join([self.base, self.type])
 
-    def _load_attributes(self):
+    def _load_attributes(self) -> None:
         """add the attributes from the loaded type_spec to the class."""
         # Add as attributes to the object
         with suppress(AttributeError):
@@ -254,7 +253,7 @@ class Schema(object):
 
     # Print
 
-    def print_similar_types(self, schema_type=None):
+    def print_similar_types(self, schema_type=None) -> None:
         """A courtesy function to print similar types based on name,
         if they are found.
         """

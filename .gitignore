@@ -1,8 +1,11 @@
-__pycache__
-*.pyc
-schemaorg.egg-info
-build
-dist
-/.pdm-python
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+./.mypy_cache
+.pdm-python
 /.pdm.toml
+/build/
 /__pypackages__/
+/dist/
+/.mypy_cache/
+/.ruff_cache/
+/schemaorg_lite/test.py

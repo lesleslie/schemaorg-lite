@@ -113,7 +113,7 @@ schema.add_property("description", "a bowling event between champions")
 Take a look at the json-ld:
 
 ```
-schema.dump_json()                                                      
+schema.dump_json()
 '{"name": "Dinosaur Bowl", "description": "a bowling event between champions", "@context": "http://www.schema.org", "@type": "SportsEvent"}'
 ```
 
@@ -157,7 +157,7 @@ schema.add_property("competitor", awayTeam)
 And now it's valid!
 
 ```python
-In [29]: recipe.validate(schema)                                                
+In [29]: recipe.validate(schema)
 Looking for primary schema SportsEvent definition
 Out[29]: True
 ```
@@ -165,15 +165,15 @@ Out[29]: True
 We could of course export it to json (you would write this to file)
 
 ```python
-print(schema.dump_json())                                              
+print(schema.dump_json())
 {"name": "Dinosaur Bowl", "description": "a bowling event between champions", "awayTeam": {"name": "Birdie Bananas", "description": "not the leading champion", "@type": "Person"}, "homeTeam": {"name": "Dinosaur Pancakes", "description": "the leading champion", "@type": "Person"}, "competitor": {"name": "Birdie Bananas", "description": "not the leading champion", "@type": "Person"}, "@context": "http://www.schema.org", "@type": "SportsEvent"}
 ```
 
 You can also get a flattened version:
 
 ```python
-schema.get_flattened()                                                 
-Out[31]: 
+schema.get_flattened()
+Out[31]:
 {'SportsEvent.name': 'Dinosaur Bowl',
  'SportsEvent.description': 'a bowling event between champions',
  'SportsEvent.awayTeam.Person.name': 'Birdie Bananas',

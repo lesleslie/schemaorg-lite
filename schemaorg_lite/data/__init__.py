@@ -12,7 +12,7 @@ def get_installdir():
 # csv
 
 
-def read_csv(filename, mode="r", delim=",", header=None, keyfield=None):
+def read_csv(filename, mode: str = "r", delim: str = ",", header=None, keyfield=None):
     """read a comma separated value file, with default delimiter as comma.
     we assume reading a header, and use some identifier as key.
 
@@ -64,7 +64,7 @@ def get_schemaorg_version():
     """
     version = get_versions()[-1]
 
-    logger.debug("schemaorg_lite version %s selected" % version)
+    logger.debug(f"schemaorg_lite version {version} selected")
     return version
 
 
@@ -95,7 +95,7 @@ ext-bib-types.csv          schemaorg_lite-all-http-types.csv
 """
 
 
-def read_properties_csv(keyfield="id", version=None):
+def read_properties_csv(keyfield: str = "id", version=None):
     """read in the properties csv (with all types), defaulting to using
     the "id" as the lookup key. We do this because the properties listed
     in the types csv include the full uri.
@@ -110,7 +110,7 @@ def read_properties_csv(keyfield="id", version=None):
     return read_csv(filename, keyfield=keyfield)
 
 
-def read_types_csv(keyfield="label", version=None):
+def read_types_csv(keyfield: str = "label", version=None):
     """read in the types csv, with default lookup key as "label" since the
     likely use case will be the user searching for an item of interest.
 

@@ -1,34 +1,54 @@
-[tool.pdm]
 [tool.pdm.dev-dependencies]
 dev = [
-    "pytest>=7.2.2",
-    "ruff>=0.0.261",
-    "isort>=5.12.0",
-    "mypy>=1.2.0",
-    "black>=23.3.0",
-    "deptry>=0.8.0",
-    "refurb>=1.15.0",
+    "crackerjack>=0.1.7",
+    "pre-commit>=3.2.2",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+fix = true
+show-fixes = true
+show-source = true
+
+[tool.ruff.isort]
+force-single-line = true
+
+[tool.ruff.mccabe]
+max-complexity = 10
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.black]
+target-version = [
+    "py311",
+]
+
+[tool.mypy]
+strict = true
+pretty = true
+
+[tool.refurb]
+enable_all = true
+
+[tool.pytype]
+inputs = [
+    "package_name",
 ]
 
 [project]
 name = "schemaorg-lite"
-version = "0.1.1"
+version = "0.1.2"
 description = "Python functions for applied use of schema.org"
-authors = [
-    { name = "Vanessa Sochat", email = "vsoch@users.noreply.github.com" },
-    { name = "lesleslie", email = "les@wedgwoodwebworks.com" },
-]
 dependencies = [
-    "msgspec>=0.13.1",
     "loguru>=0.7.0",
 ]
 requires-python = ">=3.11"
 readme = "README.md"
-license = { text = "BSD-3-Clause" }
-keywords = ["openschemas", "schema.org"]
-maintainers = [
-    {name = "lesleslie", email = "les@wedgwoodwebworks.com"},
-    {name = "Vanessa Sochat", email = "vsoch@users.noreply.github.com"},
+keywords = [
+    "openschemas",
+    "schema.org",
 ]
 classifiers = [
     "Intended Audience :: Developers",
@@ -39,6 +59,17 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Topic :: Software Development",
 ]
+authors = [
+    { name = "Vanessa Sochat", email = "vsoch@users.noreply.github.com" },
+    { name = "lesleslie", email = "les@wedgwoodwebworks.com" },
+]
+maintainers = [
+    { name = "lesleslie", email = "les@wedgwoodwebworks.com" },
+    { name = "Vanessa Sochat", email = "vsoch@users.noreply.github.com" },
+]
+
+[project.license]
+text = "BSD-3-Clause"
 
 [project.urls]
 Homepage = "https://github.com/lesleslie/schemaorg-lite"
@@ -49,32 +80,8 @@ Repository = "https://github.com/lesleslie/schemaorg-lite"
 
 [project.entry-points]
 
-[tool.ruff]
-line-length = 88
-target-version = "py311"
-
-[tool.ruff.isort]
-split-on-trailing-comma = true
-force-wrap-aliases = true
-force-single-line = true
-force-sort-within-sections = true
-
-[tool.ruff.mccabe]
-max-complexity = 10  # default
-
-[tool.ruff.pydocstyle]
-convention = "google"
-
-[tool.black]
-target-version = ["py311"]
-
-[tool.mypy]
-strict = true
-
-[tool.deptry]
-
-[tool.refurb]
-
 [build-system]
-requires = ["pdm-backend"]
+requires = [
+    "pdm-backend",
+]
 build-backend = "pdm.backend"
