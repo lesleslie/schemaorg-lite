@@ -11,4 +11,3 @@
     :rangeIncludes :Organization ;
     :source <https://github.com/schemaorg/schemaorg/issues/2296> ;
     rdfs:comment "Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed." .
-

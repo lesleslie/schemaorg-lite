@@ -8,4 +8,3 @@
     rdfs:label "inLanguage" ;
     :domainIncludes :BroadcastService ;
     :source <https://github.com/schemaorg/schemaorg/issues/2382> .
-

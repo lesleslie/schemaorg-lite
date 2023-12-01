@@ -40,4 +40,3 @@
     :isPartOf <https://pending.schema.org> ;
     :source <https://github.com/schemaorg/schemaorg/issues/3058> ;
     rdfs:comment "Indicates demo game availability, i.e. a somehow limited demonstration of the full game." .
-

@@ -54,4 +54,3 @@ JSON:
   "schema:sourceOrganization": "Princeton University"
 }
 </script>
-

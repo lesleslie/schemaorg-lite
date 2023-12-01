@@ -31,4 +31,3 @@
     :source <https://github.com/schemaorg/schemaorg/issues/1448> ;
     rdfs:comment "Printed music, as opposed to performed or recorded music." ;
     rdfs:subClassOf :CreativeWork .
-

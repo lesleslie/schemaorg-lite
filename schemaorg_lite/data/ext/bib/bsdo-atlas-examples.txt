@@ -55,4 +55,3 @@ JSON:
   "schema:publisher": "National Geographic Society"
 }
 </script>
-

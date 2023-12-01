@@ -113,4 +113,3 @@ JSON:
   "specialty": "https://schema.org/Cardiovascular"
 }
 </script>
-

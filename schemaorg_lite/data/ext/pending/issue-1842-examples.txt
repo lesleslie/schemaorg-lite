@@ -90,7 +90,7 @@ JSON:
         "@type": "VirtualLocation",
         "url": "https://stream.storytimereadings.com/"
       },
-      
+
       "image": "https://storytimereadings.com/photos/childrensphoto.jpg",
       "description": "Story Time readings for children of all ages - July 2020 edition",
       "offers": {
@@ -113,5 +113,3 @@ JSON:
       }
     }
     </script>
-
-

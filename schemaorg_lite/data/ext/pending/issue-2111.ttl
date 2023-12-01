@@ -20,4 +20,3 @@
     :rangeIncludes :Text ;
     :source <https://github.com/schemaorg/schemaorg/issues/2111> ;
     rdfs:comment "The subchannel used for the broadcast." .
-

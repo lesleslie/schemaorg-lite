@@ -291,4 +291,3 @@
     :rangeIncludes :NonprofitType ;
     :source <https://github.com/schemaorg/schemaorg/issues/2543> ;
     rdfs:comment "nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business." .
-

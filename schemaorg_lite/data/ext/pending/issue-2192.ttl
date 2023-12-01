@@ -13,4 +13,3 @@
     :rangeIncludes :CategoryCode,
         :Text ;
     :source <https://github.com/schemaorg/schemaorg/issues/2192> .
-

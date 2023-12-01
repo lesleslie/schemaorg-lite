@@ -12,4 +12,3 @@
         :WebContent ;
     :source <https://github.com/schemaorg/schemaorg/issues/2636> ;
     rdfs:comment "A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. " .
-

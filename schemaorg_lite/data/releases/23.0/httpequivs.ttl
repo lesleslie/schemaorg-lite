@@ -11289,4 +11289,3 @@ schema_s:yearlyRevenue owl:equivalentProperty schema_p:yearlyRevenue .
 schema_s:yearsInOperation owl:equivalentProperty schema_p:yearsInOperation .
 
 schema_s:yield owl:equivalentProperty schema_p:yield .
-

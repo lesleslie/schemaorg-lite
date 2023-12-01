@@ -199,4 +199,3 @@
         :URL ;
     :source <https://github.com/schemaorg/schemaorg/issues/1062> ;
     rdfs:comment "The standard for interpreting the Plan ID. The preferred is \"HIOS\". See the Centers for Medicare & Medicaid Services for more details." .
-

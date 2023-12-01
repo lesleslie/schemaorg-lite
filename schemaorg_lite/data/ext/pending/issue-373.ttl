@@ -34,4 +34,3 @@
         :URL ;
     :source <https://github.com/schemaorg/schemaorg/issues/373> ;
     rdfs:comment "The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom." .
-

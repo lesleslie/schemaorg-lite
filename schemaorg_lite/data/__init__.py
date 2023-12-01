@@ -1,7 +1,7 @@
 import csv
 from pathlib import Path
 
-from schemaorg_lite.main import logger
+from loguru import logger
 
 
 def get_installdir():
@@ -12,7 +12,9 @@ def get_installdir():
 # csv
 
 
-def read_csv(filename, mode: str = "r", delim: str = ",", header=None, keyfield=None):
+def read_csv(
+    file: Path, header=None, keyfield: str | None = None
+) -> dict[str, str] | list[str]:
     """read a comma separated value file, with default delimiter as comma.
     we assume reading a header, and use some identifier as key.
 
@@ -22,7 +24,6 @@ def read_csv(filename, mode: str = "r", delim: str = ",", header=None, keyfield=
     mode: the mode to read in (defaults to r)
     delim: the delimiter (defaults to comma)
     """
-    file = Path(filename)
 
     if not file.exists():
         logger.error("{filename} does not exist.")
@@ -30,9 +31,9 @@ def read_csv(filename, mode: str = "r", delim: str = ",", header=None, keyfield=
     # If we have a keyfield, return dictionary
     data = []
     if keyfield is not None:
-        data = dict()
+        data = {}
 
-    with open(filename, mode="r", encoding="utf-8") as csv_file:
+    with file.open() as csv_file:
         csv_reader = csv.DictReader(csv_file, fieldnames=header)
         for row in csv_reader:
             if keyfield is not None:
@@ -68,7 +69,7 @@ def get_schemaorg_version():
     return version
 
 
-def get_release(version=None):
+def get_release(version: str | None = None) -> Path:
     """get a subfolder for a particular release, defaults to latest"""
     base = get_database()
     if version is None:
@@ -76,7 +77,7 @@ def get_release(version=None):
     return base / "releases" / version
 
 
-def get_database():
+def get_database() -> Path:
     """get the data folder with "release" and "ext" subfolders"""
     return get_installdir() / "schemaorg_lite" / "data"
 
@@ -95,7 +96,9 @@ ext-bib-types.csv          schemaorg_lite-all-http-types.csv
 """
 
 
-def read_properties_csv(keyfield: str = "id", version=None):
+def read_properties_csv(
+    keyfield: str = "id", version: str = None
+) -> dict[str, str] | list[str]:
     """read in the properties csv (with all types), defaulting to using
     the "id" as the lookup key. We do this because the properties listed
     in the types csv include the full uri.
@@ -110,7 +113,9 @@ def read_properties_csv(keyfield: str = "id", version=None):
     return read_csv(filename, keyfield=keyfield)
 
 
-def read_types_csv(keyfield: str = "label", version=None):
+def read_types_csv(
+    keyfield: str = "label", version: str | None = None
+) -> dict[str, str] | list[str]:
     """read in the types csv, with default lookup key as "label" since the
     likely use case will be the user searching for an item of interest.
 
@@ -119,12 +124,12 @@ def read_types_csv(keyfield: str = "label", version=None):
     keyfield: the key to use to generate the lookup, a header in the csv
     version: release version under data/releases to use, defaults to latest
     """
-    release_dir = get_release(version=version)
-    filename = release_dir / "schemaorg_lite-all-https-types.csv"
-    return read_csv(filename, keyfield=keyfield)
+    release_path = get_release(version=version)
+    file = release_path / "schemaorg_lite-all-https-types.csv"
+    return read_csv(file, keyfield=keyfield)
 
 
-def find_similar_types(term, version=None):
+def find_similar_types(term, version=None) -> list[str]:
     """find similar types, with intent to show to the user in case
     capitalization was off.
 

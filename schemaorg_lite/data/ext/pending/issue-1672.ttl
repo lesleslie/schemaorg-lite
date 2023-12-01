@@ -17,4 +17,3 @@
     :source <https://github.com/schemaorg/schemaorg/issues/1672> ;
     rdfs:comment "Text representing an XPath (typically but not necessarily version 1.0)." ;
     rdfs:subClassOf :Text .
-

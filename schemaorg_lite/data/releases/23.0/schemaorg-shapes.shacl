@@ -8010,4 +8010,3 @@
 :ValidSchemaText a sh:NodeShape ;
     sh:nodeKind sh:BlankNodeOrIRI ;
     sh:targetClass schema1:Text .
-

@@ -1881,4 +1881,3 @@ schema1:Enumeration rdfs:subClassOf schema1:Intangible .
 schema1:Intangible rdfs:subClassOf schema1:Thing .
 
 schema1:CreativeWork rdfs:subClassOf schema1:Thing .
-

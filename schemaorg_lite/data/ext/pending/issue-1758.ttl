@@ -46,4 +46,3 @@
     :rangeIncludes :ArchiveOrganization ;
     :source <https://github.com/schemaorg/schemaorg/issues/1758> ;
     rdfs:comment "[[ArchiveOrganization]] that holds, keeps or maintains the [[ArchiveComponent]]."@en .
-

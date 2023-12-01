@@ -10,4 +10,3 @@
     :source <https://github.com/schemaorg/schemaorg/issues/2611> ;
     rdfs:comment "Quiz: A test of knowledge, skills and abilities." ;
     rdfs:subClassOf :LearningResource .
-

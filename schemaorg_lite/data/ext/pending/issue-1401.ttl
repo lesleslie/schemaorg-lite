@@ -32,4 +32,3 @@
 
 :teaches a rdf:Property ;
     :domainIncludes :LearningResource .
-

@@ -484,15 +484,3 @@
 :size :rangeIncludes :SizeSpecification .
 
 :valueReference :rangeIncludes :MeasurementTypeEnumeration, :Text, :DefinedTerm .
-
-
-
-
-
-
-
-
-
-
-
-

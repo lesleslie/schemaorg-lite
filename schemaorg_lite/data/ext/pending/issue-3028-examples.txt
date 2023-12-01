@@ -45,4 +45,3 @@ JSON:
   "foundingDate": "2019-10-24"
 }
 </script>
-

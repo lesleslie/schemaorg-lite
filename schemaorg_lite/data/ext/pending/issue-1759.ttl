@@ -20,4 +20,3 @@
         :Text ;
     :source <https://github.com/schemaorg/schemaorg/issues/1759> ;
     rdfs:comment "The quantity of the materials being described or an expression of the physical space they occupy."@en .
-

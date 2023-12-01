@@ -23,4 +23,3 @@
 
 :reviewAspect a rdf:Property ;
     :domainIncludes :Guide .
-

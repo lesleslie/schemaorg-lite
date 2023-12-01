@@ -42,4 +42,3 @@ Note: This type is for information about actual reservations, e.g. in confirmati
     :rangeIncludes :BoatTerminal ;
     :source <https://github.com/schemaorg/schemaorg/issues/1755> ;
     rdfs:comment "The terminal or port from which the boat departs." .
-

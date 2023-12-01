@@ -13,4 +13,3 @@
         :Product .
 
 :includesObject :domainIncludes :ProductCollection .
-

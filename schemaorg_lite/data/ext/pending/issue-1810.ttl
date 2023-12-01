@@ -68,4 +68,3 @@
     :contributor <https://schema.org/docs/collab/Tourism>;
     :source <https://github.com/schemaorg/schemaorg/issues/1810> ;
     rdfs:comment "Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip." .
-

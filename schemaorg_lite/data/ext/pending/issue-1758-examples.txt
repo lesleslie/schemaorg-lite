@@ -272,4 +272,3 @@ JSON:
   "isPartOf": "https://archiveshub.jisc.ac.uk/data/gb71-thm/407/thm/407/8"
 }
 </script>
-

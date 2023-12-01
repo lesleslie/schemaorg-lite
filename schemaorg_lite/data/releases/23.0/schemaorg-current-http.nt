@@ -16387,4 +16387,3 @@
 <http://schema.org/legislationTransposes> <http://schema.org/isPartOf> <http://pending.schema.org> .
 <http://schema.org/currency> <http://schema.org/domainIncludes> <http://schema.org/LoanOrCredit> .
 <http://schema.org/actionAccessibilityRequirement> <http://schema.org/domainIncludes> <http://schema.org/ConsumeAction> .
-

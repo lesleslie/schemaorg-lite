@@ -49,4 +49,3 @@
     :rangeIncludes :Text ;
     :source <https://github.com/schemaorg/schemaorg/issues/2766> ;
     rdfs:comment "Text of an utterances (spoken words, lyrics etc.) that occurs at a certain section of a media object, represented as a [[HyperTocEntry]]." .
-

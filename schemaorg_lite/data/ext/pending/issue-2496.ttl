@@ -8,4 +8,3 @@
     :domainIncludes :SpecialAnnouncement ;
     :rangeIncludes :DateTime ;
     :source <https://github.com/schemaorg/schemaorg/issues/2490> .
-

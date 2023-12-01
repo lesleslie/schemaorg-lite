@@ -153,7 +153,7 @@
     :rangeIncludes :MerchantReturnEnumeration ;
     :source <https://github.com/schemaorg/schemaorg/issues/2288> ;
     rdfs:comment "Specifies an applicable return policy (from an enumeration)." .
-		
+
 :ReturnMethodEnumeration a rdfs:Class ;
     rdfs:label "ReturnMethodEnumeration" ;
     :isPartOf <https://pending.schema.org> ;
@@ -215,7 +215,7 @@
     :isPartOf <https://pending.schema.org> ;
     :source <https://github.com/schemaorg/schemaorg/issues/2880> ;
     rdfs:comment "Specifies that product returns are free of charge for the customer." .
-	
+
 :returnMethod a rdf:Property ;
     rdfs:label "returnMethod" ;
     :domainIncludes :MerchantReturnPolicy ;
@@ -320,6 +320,3 @@
     :rangeIncludes :MerchantReturnPolicySeasonalOverride ;
     :source <https://github.com/schemaorg/schemaorg/issues/2880> ;
     rdfs:comment "Seasonal override of a return policy." .
-
-	
-

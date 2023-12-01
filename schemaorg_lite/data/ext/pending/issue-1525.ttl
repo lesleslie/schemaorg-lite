@@ -200,4 +200,3 @@ A [[ReportageNewsArticle]] which goes deeper into analysis can also be marked wi
     :contributor <https://schema.org/docs/collab/TP> ;
     rdfs:comment "Disclosure about verification and fact-checking processes for a [[NewsMediaOrganization]] or other fact-checking [[Organization]]." ;
     rdfs:subPropertyOf :publishingPrinciples .
-

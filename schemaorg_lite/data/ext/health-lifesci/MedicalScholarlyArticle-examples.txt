@@ -152,4 +152,3 @@ JSON:
   "publicationType": "Meta-Analysis"
   }
 </script>
-

@@ -32,4 +32,3 @@
   The [[RealEstateListing]] type itself represents the overall listing, as manifested in some [[WebPage]].
   """ ;
     rdfs:subClassOf :WebPage .
-

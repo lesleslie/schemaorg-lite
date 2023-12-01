@@ -102,4 +102,3 @@
     :rangeIncludes :MonetaryAmountDistribution ;
     :source <https://github.com/schemaorg/schemaorg/issues/2289> ;
     rdfs:comment "The estimated salary earned while in the program." .
-

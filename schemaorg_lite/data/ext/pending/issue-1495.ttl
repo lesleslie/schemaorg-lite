@@ -10,4 +10,3 @@
     :source <https://github.com/schemaorg/schemaorg/issues/1495> ;
     rdfs:comment "A [[LibrarySystem]] is a collaborative system amongst several libraries." ;
     rdfs:subClassOf :Organization .
-

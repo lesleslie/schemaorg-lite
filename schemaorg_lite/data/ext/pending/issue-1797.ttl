@@ -72,4 +72,3 @@ While a ProductGroup itself is not directly offered for sale, the various varyin
     :domainIncludes :Product ;
     :inverseOf :hasVariant ;
     :rangeIncludes :ProductGroup .
-

@@ -78,4 +78,3 @@ This example is in microdata only
 JSON:
 
 This example is in microdata only
-

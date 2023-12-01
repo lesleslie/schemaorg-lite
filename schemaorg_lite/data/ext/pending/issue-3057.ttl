@@ -28,7 +28,7 @@
     :isPartOf <https://pending.schema.org> ;
     :source <https://github.com/schemaorg/schemaorg/issues/3057> ;
     rdfs:comment "Represents the generic notion of the Web Platform. More specific codes include [[MobileWebPlatform]] and [[DesktopWebPlatform]], as an incomplete list. " .
-    
+
 :AndroidPlatform a :DigitalPlatformEnumeration ;
     rdfs:label "AndroidPlatform" ;
     :isPartOf <https://pending.schema.org> ;
@@ -40,4 +40,3 @@
     :isPartOf <https://pending.schema.org> ;
     :source <https://github.com/schemaorg/schemaorg/issues/3057> ;
     rdfs:comment "Represents the broad notion of iOS-based operating systems." .
-

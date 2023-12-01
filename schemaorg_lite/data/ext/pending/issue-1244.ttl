@@ -30,4 +30,3 @@ The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link
 
 Note also that this is a definition for how to include GTINs in Schema.org data, and not a definition of GTINs in general - see the GS1 documentation for authoritative details.""" ;
     rdfs:subPropertyOf :identifier .
-

@@ -11,4 +11,3 @@
 :startDate a rdf:Property ;
     :domainIncludes :Schedule ;
     :source <https://github.com/schemaorg/schemaorg/issues/2486> .
-

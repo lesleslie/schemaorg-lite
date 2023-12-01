@@ -11,4 +11,3 @@
     :rangeIncludes :DateTime ;
     :source <https://github.com/schemaorg/schemaorg/issues/1050> ;
     rdfs:comment "The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event." .
-

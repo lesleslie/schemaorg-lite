@@ -22,8 +22,8 @@ JSON:
   "name": "Example Video Title",
   "url":  "https://video.example.com/watch/videoID"
   "potentialAction": {
-      "@type": "SeekToAction",      
-      "target": "https://video.example.com/watch/videoID?t={seek_to_second_number}",     
+      "@type": "SeekToAction",
+      "target": "https://video.example.com/watch/videoID?t={seek_to_second_number}",
       "startOffset-input": "required name=seek_to_second_number"
   }
 }

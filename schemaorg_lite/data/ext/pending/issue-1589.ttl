@@ -17,4 +17,3 @@
     :source <https://github.com/schemaorg/schemaorg/issues/1589> ;
     rdfs:comment "A review created by an end-user (e.g. consumer, purchaser, attendee etc.), in contrast with [[CriticReview]]." ;
     rdfs:subClassOf :Review .
-

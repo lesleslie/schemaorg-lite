@@ -49,4 +49,3 @@
 
 :priceType :domainIncludes :CompoundPriceSpecification ;
     :rangeIncludes :PriceTypeEnumeration .
-

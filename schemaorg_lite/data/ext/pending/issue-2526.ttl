@@ -10,4 +10,3 @@
     :source <https://github.com/schemaorg/schemaorg/issues/2526> ;
     rdfs:comment "A [hackathon](https://en.wikipedia.org/wiki/Hackathon) event." ;
     rdfs:subClassOf :Event .
-

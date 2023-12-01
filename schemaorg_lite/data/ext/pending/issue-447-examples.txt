@@ -61,4 +61,3 @@ JSON:
   "superEvent" : "http://www.olympic.org/olympic-games"
 }]
 </script>
-

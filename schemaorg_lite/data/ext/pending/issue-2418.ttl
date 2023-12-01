@@ -12,4 +12,3 @@
         :Text ;
     :source <https://github.com/schemaorg/schemaorg/issues/2418> ;
     rdfs:comment "A financial aid type or program which students may use to pay for tuition or fees associated with the program." .
-

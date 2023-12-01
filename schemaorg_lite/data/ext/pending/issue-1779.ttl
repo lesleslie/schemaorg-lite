@@ -71,4 +71,3 @@
     rdfs:label "validIn" ;
     :domainIncludes :EducationalOccupationalCredential ;
     :source <https://github.com/schemaorg/schemaorg/issues/1779> .
-

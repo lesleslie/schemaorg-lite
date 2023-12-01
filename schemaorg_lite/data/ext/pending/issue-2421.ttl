@@ -9,4 +9,3 @@
     :domainIncludes :Organization,
         :Person ;
     :source <https://github.com/schemaorg/schemaorg/issues/2421> .
-

@@ -33,4 +33,3 @@
     :source <https://github.com/schemaorg/schemaorg/issues/1828> ;
     rdfs:comment "Indicates the first known occurrence of a [[Claim]] in some [[CreativeWork]]." ;
     rdfs:subPropertyOf :workExample .
-

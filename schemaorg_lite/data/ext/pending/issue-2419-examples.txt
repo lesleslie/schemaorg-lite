@@ -29,4 +29,3 @@ JSON:
   "typicalCreditsPerTerm": 4
 }
 </script>
-

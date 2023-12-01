@@ -1,12 +1,17 @@
+[tool.pdm.options]
+config = [
+    "python.use_venv",
+    "true",
+]
+
 [tool.pdm.dev-dependencies]
 dev = [
     "crackerjack>=0.1.7",
-    "pre-commit>=3.2.2",
 ]
 
 [tool.ruff]
 line-length = 88
-target-version = "py311"
+target-version = "py312"
 fix = true
 show-fixes = true
 show-source = true
@@ -20,22 +25,59 @@ max-complexity = 10
 [tool.ruff.pydocstyle]
 convention = "google"
 
-[tool.black]
-target-version = [
-    "py311",
+[tool.creosote]
+paths = [
+    "schemaorg_lite",
+]
+deps-file = "pyproject.toml"
+exclude-deps = [
+    "autotyping",
+    "pytest",
+    "pdm",
+    "pdm-bump",
+    "pre-commit",
 ]
 
-[tool.mypy]
-strict = true
-pretty = true
+[tool.codespell]
+skip = "*/data/*"
+quiet-level = 3
+ignore-words-list = "crate,uptodate"
+
+[tool.bandit]
+target = [
+    "schemaorg_lite",
+]
+skips = [
+    "B603",
+    "B404",
+]
+
+[tool.black]
+target-version = [
+    "py312",
+]
 
 [tool.refurb]
 enable_all = true
 
-[tool.pytype]
-inputs = [
-    "package_name",
+[tool.pyright]
+verboseOutput = true
+include = [
+    "schemaorg_lite",
 ]
+extraPaths = [
+    "__pypackages__/3.12/lib/",
+]
+typeCheckingMode = "strict"
+reportMissingTypeStubs = false
+reportOptionalMemberAccess = false
+reportOptionalCall = false
+reportUnknownMemberType = false
+reportUnknownVariableType = false
+reportUnknownArgumentType = false
+reportPrivateUsage = "warning"
+pythonVersion = "3.12"
+pythonPlatform = "Darwin"
 
 [project]
 name = "schemaorg-lite"
@@ -44,7 +86,7 @@ description = "Python functions for applied use of schema.org"
 dependencies = [
     "loguru>=0.7.0",
 ]
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 readme = "README.md"
 keywords = [
     "openschemas",
@@ -75,10 +117,6 @@ text = "BSD-3-Clause"
 Homepage = "https://github.com/lesleslie/schemaorg-lite"
 Documentation = "https://github.com/lesleslie/schemaorg-lite"
 Repository = "https://github.com/lesleslie/schemaorg-lite"
-
-[project.scripts]
-
-[project.entry-points]
 
 [build-system]
 requires = [

@@ -38,4 +38,3 @@
     :rangeIncludes :Text ;
     :source <https://github.com/schemaorg/schemaorg/issues/2108> ;
     rdfs:comment "Text value being annotated." .
-

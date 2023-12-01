@@ -75,4 +75,3 @@
     :source <https://github.com/schemaorg/schemaorg/issues/2288> ;
     :supersededBy :merchantReturnLink ;
     rdfs:comment "Indicates a Web page or service by URL, for product return." .
-

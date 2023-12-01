@@ -55,4 +55,3 @@ JSON:
   "schema:url": "http://ft.com"
 }
 </script>
-

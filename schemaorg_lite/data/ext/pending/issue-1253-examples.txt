@@ -150,7 +150,7 @@ MICRODATA:
     <span>Months</span>
     <div id="payNum" itemprop="numberOfLoanPayments">360</div>
   </div>
-  
+
 <table>
 	<caption id="amount" itemprop="amount" itemscope itemtype="https://schema.org/MonetaryAmount">Rates are based on a loan amount of <span itemprop="currency" content="USD">$</span><span itemprop="value" content="200000">200,000</span> and 20% down payment.</caption>
   <tr>
@@ -184,7 +184,7 @@ RDFA:
     <span>Months</span>
     <div id="payNum" property="numberOfLoanPayments">360</div>
   </div>
-  
+
 <table>
 	<caption id="amount" property="amount" typeof="MonetaryAmount">Rates are based on a loan amount of <span property="currency" content="USD">$</span><span property="value" content="200000">200,000</span> and 20% down payment.</caption>
   <tr>

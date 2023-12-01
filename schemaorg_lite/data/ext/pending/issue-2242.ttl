@@ -15,4 +15,3 @@
         :Place,
         :Text ;
     :source <https://github.com/schemaorg/schemaorg/issues/2242> .
-

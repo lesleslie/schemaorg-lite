@@ -12,4 +12,4 @@ We provide schema.org 23.0 and later.
 This library is not intended to provide advanced functions around querying the ontology,
 but rather accessing the definitions and tagging content with them.
 
-## Acknowlegdments
+## Acknowledgments

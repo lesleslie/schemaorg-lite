@@ -24,4 +24,3 @@
     :domainIncludes :EducationalOccupationalProgram ;
     :isPartOf <https://pending.schema.org> ;
     :source <https://github.com/schemaorg/schemaorg/issues/2460> .
-
