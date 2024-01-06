@@ -16,17 +16,18 @@ class Schema:
         version: str | float | None = None,
         base: str | None = None,
     ) -> None:
-        self.type = None
-        self.properties = {}
+        self.type = schema_type
         self.loaded = {}
+        self.properties = {}
+        self._properties = {}
         self._set_base(base)
         self._set_version(version)
         self.load_type(schema_type)
 
-    def __str__(self) -> str | None:
+    def __str__(self) -> str:
         return self.type
 
-    def __repr__(self) -> str | None:
+    def __repr__(self) -> str:
         return self.__str__()
 
     def _set_base(self, base: str | None) -> None:
@@ -57,7 +58,6 @@ class Schema:
         del self.properties[name.lower()]
 
     def load_type(self, schema_type: str) -> None:
-        self._properties = {}
         self._load_type(schema_type)
         self._load_props()
         self._load_attributes()
@@ -69,20 +69,23 @@ class Schema:
             name = f"https://schema.org/{prop[field]}"
             self._properties[prop[field]] = {}
             prop = {k: v for k, v in prop.items() if v}
-            if name in lookup:
-                self._properties[prop[field]] = lookup[name]
-            self._properties[prop[field]].update(prop)
+            if isinstance(lookup, dict):
+                if name in lookup:
+                    self._properties[prop[field]] = lookup[name]
+                self._properties[prop[field]].update(prop)
         logger.info(f"{self.type}: found {len(self._properties)} properties")
 
     def _load_props(self) -> None:
         lookup = read_properties_csv(version=self.version)
         with suppress(AttributeError):
-            props = self.type_spec["properties"].split(",")
+            props = self.type_spec["properties"].split(",")  # type: ignore
             props = [p.strip() for p in props]
             for prop in props:
                 if prop in lookup:
                     # The label is the most human friendly key
-                    self._properties[lookup[prop]["label"]] = lookup[prop]
+                    self._properties[lookup[prop]["label"]] = lookup[  # type: ignore
+                        prop
+                    ]
             logger.info(f"{self.type}: found {len(self._properties)} properties")
 
     def _load_type(self, schema_type: str) -> None:
@@ -93,7 +96,8 @@ class Schema:
             return
         self._set_type(schema_type)
         # logger.info(f"Found {self.url}")
-        self.type_spec = typs[self.type]
+        if isinstance(typs, dict):
+            self.type_spec = typs[self.type]
 
     def _set_type(self, schema_type: str) -> None:
         self.type = schema_type
@@ -101,7 +105,7 @@ class Schema:
 
     def _load_attributes(self) -> None:
         with suppress(AttributeError):
-            for attr in list(self.type_spec.keys()):
+            for attr in list(self.type_spec.keys()):  # type: ignore
                 if attr != "properties":
                     setattr(self, attr, self.type_spec[attr])
 
@@ -109,6 +113,6 @@ class Schema:
 
     def print_similar_types(self, schema_type: str | None = None) -> None:
         contenders = find_similar_types(schema_type or self.type)
-        if len(contenders) > 0:
+        if contenders:
             logger.info("Did you mean:")
             logger.info("\n\t".join(contenders))

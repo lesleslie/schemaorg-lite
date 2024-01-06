@@ -5,7 +5,6 @@ from loguru import logger
 
 
 def get_installdir():
-    """get_installdir returns the installation directory of the application"""
     return Path(__file__).parent.parent.parent
 
 
@@ -13,31 +12,18 @@ def get_installdir():
 
 
 def read_csv(
-    file: Path, header=None, keyfield: str | None = None
+    file: Path, header: list[str] | None = None, keyfield: str | None = None
 ) -> dict[str, str] | list[str]:
-    """read a comma separated value file, with default delimiter as comma.
-    we assume reading a header, and use some identifier as key.
-
-    Parameters
-    ==========
-    filename: the name of the csv file to read
-    mode: the mode to read in (defaults to r)
-    delim: the delimiter (defaults to comma)
-    """
-
     if not file.exists():
         logger.error("{filename} does not exist.")
-
-    # If we have a keyfield, return dictionary
     data = []
     if keyfield is not None:
         data = {}
-
     with file.open() as csv_file:
         csv_reader = csv.DictReader(csv_file, fieldnames=header)
         for row in csv_reader:
-            if keyfield is not None:
-                data[row[keyfield]] = row
+            if isinstance(data, dict):
+                data[row[keyfield]] = row  # type: ignore
             else:
                 data.append(row)
     return data
@@ -49,9 +35,6 @@ def read_csv(
 
 
 def get_versions():
-    """list versions available, based on subfolders in a subfolder under the
-    database. We default to listing those under "release."
-    """
     base = get_database()
     versions = (base / "releases").iterdir()
     versions = [float(x.name) for x in versions]
@@ -60,17 +43,12 @@ def get_versions():
 
 
 def get_schemaorg_version():
-    """determine the schemaorg_lite version to use based on an environmental variable
-    first followed by  using the latest.
-    """
     version = get_versions()[-1]
-
     logger.debug(f"schemaorg_lite version {version} selected")
     return version
 
 
 def get_release(version: str | None = None) -> Path:
-    """get a subfolder for a particular release, defaults to latest"""
     base = get_database()
     if version is None:
         version = get_schemaorg_version()
@@ -78,7 +56,6 @@ def get_release(version: str | None = None) -> Path:
 
 
 def get_database() -> Path:
-    """get the data folder with "release" and "ext" subfolders"""
     return get_installdir() / "schemaorg_lite" / "data"
 
 
@@ -97,17 +74,8 @@ ext-bib-types.csv          schemaorg_lite-all-http-types.csv
 
 
 def read_properties_csv(
-    keyfield: str = "id", version: str = None
+    keyfield: str = "id", version: str | None = None
 ) -> dict[str, str] | list[str]:
-    """read in the properties csv (with all types), defaulting to using
-    the "id" as the lookup key. We do this because the properties listed
-    in the types csv include the full uri.
-
-    Parameters
-    ==========
-    keyfield: the key to use to generate the lookup, a header in the csv
-    version: release version under data/releases to use, defaults to latest
-    """
     release_dir = get_release(version=version)
     filename = release_dir / "schemaorg_lite-all-https-properties.csv"
     return read_csv(filename, keyfield=keyfield)
@@ -116,32 +84,15 @@ def read_properties_csv(
 def read_types_csv(
     keyfield: str = "label", version: str | None = None
 ) -> dict[str, str] | list[str]:
-    """read in the types csv, with default lookup key as "label" since the
-    likely use case will be the user searching for an item of interest.
-
-    Parameters
-    ==========
-    keyfield: the key to use to generate the lookup, a header in the csv
-    version: release version under data/releases to use, defaults to latest
-    """
     release_path = get_release(version=version)
     file = release_path / "schemaorg_lite-all-https-types.csv"
     return read_csv(file, keyfield=keyfield)
 
 
-def find_similar_types(term, version=None) -> list[str]:
-    """find similar types, with intent to show to the user in case
-    capitalization was off.
-
-    Parameters
-    ==========
-    term: a term to search for, in entirety. Casing doesn't matter
-    version: release version under data/releases to use, defaults to latest
-    """
-    typs = read_types_csv(version=version)
-
-    # In case the user provided an url, remove it
-    term = term.split("/")[-1].lower()
-
-    # Look for entire term
-    return [x for x in typs if term in x.lower()]
+def find_similar_types(
+    term: str | None, version: str | None = None
+) -> list[str] | None:
+    if term:
+        typs = read_types_csv(version=version)
+        term = term.split("/")[-1].lower()
+        return [x for x in typs if term in x.lower()]
