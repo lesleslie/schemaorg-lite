@@ -31,11 +31,11 @@ paths = [
 ]
 deps-file = "pyproject.toml"
 exclude-deps = [
-    "autotyping",
-    "pdm-bump",
-    "pytest",
-    "pdm",
     "pre-commit",
+    "pdm",
+    "pdm-bump",
+    "autotyping",
+    "pytest",
 ]
 
 [tool.codespell]
@@ -48,8 +48,8 @@ target = [
     "schemaorg_lite",
 ]
 skips = [
-    "B603",
     "B404",
+    "B603",
 ]
 
 [tool.black]
@@ -81,7 +81,7 @@ pythonPlatform = "Darwin"
 
 [project]
 name = "schemaorg-lite"
-version = "0.1.5"
+version = "0.1.6"
 description = "Python functions for applied use of schema.org"
 dependencies = []
 requires-python = ">=3.12"
