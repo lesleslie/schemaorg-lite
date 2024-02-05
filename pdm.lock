@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["cross_platform"]
 lock_version = "4.4.1"
-content_hash = "sha256:4af2acaf50bb73d631665158c74c7e361b66886bf8ea691d919e4b62ec672cf1"
+content_hash = "sha256:fb95872aa40fe81a4a224d2e216c2bf2bfab4556f5cac6883acdb42f7b9ae589"
 
 [[package]]
 name = "about-time"
@@ -339,7 +339,7 @@ files = [
 
 [[package]]
 name = "crackerjack"
-version = "0.7.19"
+version = "0.7.22"
 requires_python = ">=3.12"
 summary = "Crackerjack code style"
 dependencies = [
@@ -356,8 +356,8 @@ dependencies = [
     "pytest>=7.4.3",
 ]
 files = [
-    {file = "crackerjack-0.7.19-py3-none-any.whl", hash = "sha256:ac5be88880f5c5bd0a78d250a472f7456a4149e215a05529bf076839e051d1ac"},
-    {file = "crackerjack-0.7.19.tar.gz", hash = "sha256:fbdff29a3d5786813673cc0c61a8e6c0806117efb19ca8b151663d3ce82d8b25"},
+    {file = "crackerjack-0.7.22-py3-none-any.whl", hash = "sha256:6dca9483daa62bb2542ff78cda7bab5a824a954813918a473cc24003a7a902d8"},
+    {file = "crackerjack-0.7.22.tar.gz", hash = "sha256:441c0ab899d4b218a3865c334c0af529be9ca7e5dcedd302bb4a3b08d2dc7b9d"},
 ]
 
 [[package]]

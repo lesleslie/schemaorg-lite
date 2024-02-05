@@ -1,12 +1,16 @@
 import re
 from contextlib import suppress
-
-from loguru import logger
+from logging import getLogger
 
 from schemaorg_lite.data import find_similar_types
+from schemaorg_lite.data import get_schemaorg_version
 from schemaorg_lite.data import get_versions
 from schemaorg_lite.data import read_properties_csv
 from schemaorg_lite.data import read_types_csv
+
+get_schemaorg_version()
+
+logger = getLogger("schemaorg_lite")
 
 
 class Schema:
@@ -46,8 +50,7 @@ class Schema:
         if version not in available:
             logger.warning(f"Version {version} is not found in the data folder")
             version = available[-1]
-            # logger.info(f"Using Version {version}")
-            self.version = version
+        self.version = version
 
     def add_property(self, name: str, value: str) -> None:
         if value not in ("", None, [], ()) and name in self._properties:
@@ -73,7 +76,7 @@ class Schema:
                 if name in lookup:
                     self._properties[prop[field]] = lookup[name]
                 self._properties[prop[field]].update(prop)
-        logger.info(f"{self.type}: found {len(self._properties)} properties")
+        logger.debug(f"{self.type}: found {len(self._properties)} properties")
 
     def _load_props(self) -> None:
         lookup = read_properties_csv(version=self.version)
@@ -86,7 +89,7 @@ class Schema:
                     self._properties[lookup[prop]["label"]] = lookup[  # type: ignore
                         prop
                     ]
-            logger.info(f"{self.type}: found {len(self._properties)} properties")
+            logger.debug(f"{self.type}: found {len(self._properties)} properties")
 
     def _load_type(self, schema_type: str) -> None:
         typs = read_types_csv(version=self.version)
@@ -108,8 +111,6 @@ class Schema:
             for attr in list(self.type_spec.keys()):  # type: ignore
                 if attr != "properties":
                     setattr(self, attr, self.type_spec[attr])
-
-    # Print
 
     def print_similar_types(self, schema_type: str | None = None) -> None:
         contenders = find_similar_types(schema_type or self.type)

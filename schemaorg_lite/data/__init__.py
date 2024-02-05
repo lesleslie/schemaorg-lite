@@ -1,7 +1,8 @@
 import csv
+from logging import getLogger
 from pathlib import Path
 
-from loguru import logger
+logger = getLogger("schemaorg_lite")
 
 
 def get_installdir():
@@ -15,7 +16,7 @@ def read_csv(
     file: Path, header: list[str] | None = None, keyfield: str | None = None
 ) -> dict[str, str] | list[str]:
     if not file.exists():
-        logger.error("{filename} does not exist.")
+        logger.error(f"{file.name} does not exist.")
     data = []
     if keyfield is not None:
         data = {}
@@ -44,7 +45,7 @@ def get_versions():
 
 def get_schemaorg_version():
     version = get_versions()[-1]
-    logger.debug(f"schemaorg_lite version {version} selected")
+    logger.info(f"Using schema.org version {version}")
     return version
 
 
@@ -68,8 +69,8 @@ ext-attic-properties.csv   ext-meta-properties.csv
 ext-attic-types.csv        ext-meta-types.csv
 ext-auto-properties.csv    ext-pending-properties.csv
 ext-auto-types.csv         ext-pending-types.csv
-ext-bib-properties.csv     schemaorg_lite-all-https-properties.csv
-ext-bib-types.csv          schemaorg_lite-all-http-types.csv
+ext-bib-properties.csv     schemaorg-all-https-properties.csv
+ext-bib-types.csv          schemaorg-all-http-types.csv
 """
 
 
@@ -77,7 +78,7 @@ def read_properties_csv(
     keyfield: str = "id", version: str | None = None
 ) -> dict[str, str] | list[str]:
     release_dir = get_release(version=version)
-    filename = release_dir / "schemaorg_lite-all-https-properties.csv"
+    filename = release_dir / "schemaorg-all-https-properties.csv"
     return read_csv(filename, keyfield=keyfield)
 
 
@@ -85,7 +86,7 @@ def read_types_csv(
     keyfield: str = "label", version: str | None = None
 ) -> dict[str, str] | list[str]:
     release_path = get_release(version=version)
-    file = release_path / "schemaorg_lite-all-https-types.csv"
+    file = release_path / "schemaorg-all-https-types.csv"
     return read_csv(file, keyfield=keyfield)
 
 
