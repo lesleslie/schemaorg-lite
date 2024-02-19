@@ -14,15 +14,15 @@ line-length = 88
 target-version = "py312"
 fix = true
 show-fixes = true
-show-source = true
+output-format = "full"
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 force-single-line = true
 
-[tool.ruff.mccabe]
+[tool.ruff.lint.mccabe]
 max-complexity = 10
 
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "google"
 
 [tool.creosote]
@@ -31,11 +31,11 @@ paths = [
 ]
 deps-file = "pyproject.toml"
 exclude-deps = [
-    "pre-commit",
     "pdm",
-    "pdm-bump",
-    "autotyping",
     "pytest",
+    "pdm-bump",
+    "pre-commit",
+    "autotyping",
 ]
 
 [tool.codespell]
@@ -81,7 +81,7 @@ pythonPlatform = "Darwin"
 
 [project]
 name = "schemaorg-lite"
-version = "0.1.6"
+version = "0.1.7"
 description = "Python functions for applied use of schema.org"
 dependencies = []
 requires-python = ">=3.12"
