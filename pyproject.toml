@@ -16,6 +16,11 @@ fix = true
 show-fixes = true
 output-format = "full"
 
+[tool.ruff.lint]
+ignore = [
+    "F821",
+]
+
 [tool.ruff.lint.isort]
 force-single-line = true
 
@@ -31,11 +36,11 @@ paths = [
 ]
 deps-file = "pyproject.toml"
 exclude-deps = [
-    "pdm",
     "pytest",
+    "pdm",
+    "autotyping",
     "pdm-bump",
     "pre-commit",
-    "autotyping",
 ]
 
 [tool.codespell]
@@ -48,8 +53,8 @@ target = [
     "schemaorg_lite",
 ]
 skips = [
-    "B404",
     "B603",
+    "B404",
 ]
 
 [tool.black]
@@ -81,7 +86,7 @@ pythonPlatform = "Darwin"
 
 [project]
 name = "schemaorg-lite"
-version = "0.1.7"
+version = "0.1.8"
 description = "Python functions for applied use of schema.org"
 dependencies = []
 requires-python = ">=3.12"
