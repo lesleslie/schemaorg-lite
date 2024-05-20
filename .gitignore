@@ -11,4 +11,4 @@
 /tmp/
 /__pycache__/
 /*.pyc
-/.schemaorg_lite.yaml
+/.crackerjack.yaml
