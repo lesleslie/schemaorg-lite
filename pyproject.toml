@@ -6,7 +6,7 @@ config = [
 
 [tool.pdm.dev-dependencies]
 dev = [
-    "crackerjack>=0.7.17",
+    "crackerjack>=0.7.34",
 ]
 
 [tool.ruff]
@@ -36,11 +36,11 @@ paths = [
 ]
 deps-file = "pyproject.toml"
 exclude-deps = [
-    "autotyping",
-    "pdm",
     "pytest",
     "pdm-bump",
     "pre-commit",
+    "pdm",
+    "autotyping",
 ]
 
 [tool.codespell]
