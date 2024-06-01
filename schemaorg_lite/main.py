@@ -2,11 +2,13 @@ import re
 from contextlib import suppress
 from logging import getLogger
 
-from schemaorg_lite.data import find_similar_types
-from schemaorg_lite.data import get_schemaorg_version
-from schemaorg_lite.data import get_versions
-from schemaorg_lite.data import read_properties_csv
-from schemaorg_lite.data import read_types_csv
+from schemaorg_lite.data import (
+    find_similar_types,
+    get_schemaorg_version,
+    get_versions,
+    read_properties_csv,
+    read_types_csv,
+)
 
 get_schemaorg_version()
 
