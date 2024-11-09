@@ -1,11 +1,11 @@
-[tool.pdm.dev-dependencies]
+[dependency-groups]
 dev = [
-    "crackerjack>=0.8.20",
+    "crackerjack>=0.10.4",
 ]
 
 [tool.ruff]
 line-length = 88
-target-version = "py312"
+target-version = "py313"
 fix = true
 show-fixes = true
 output-format = "full"
@@ -49,13 +49,15 @@ paths = [
 ]
 deps-file = "pyproject.toml"
 exclude-deps = [
-    "pytest",
-    "pre-commit",
-    "pyyaml",
+    "tomli-w",
     "autotyping",
-    "pyfiglet",
+    "pytest",
     "pdm",
+    "uv",
     "pdm-bump",
+    "pyyaml",
+    "pre-commit",
+    "pyfiglet",
 ]
 
 [tool.codespell]
@@ -69,17 +71,12 @@ target = [
 ]
 skips = [
     "B602",
-    "B404",
     "B311",
-    "B607",
-    "B603",
-    "B403",
     "B301",
-]
-
-[tool.black]
-target-version = [
-    "py312",
+    "B603",
+    "B404",
+    "B607",
+    "B403",
 ]
 
 [tool.refurb]
@@ -94,7 +91,7 @@ exclude = [
     "scratch",
 ]
 extraPaths = [
-    "__pypackages__/3.12/lib/",
+    ".venv/lib/python3.13/site-packages/",
 ]
 typeCheckingMode = "strict"
 reportMissingTypeStubs = false
@@ -104,15 +101,23 @@ reportUnknownMemberType = false
 reportUnknownVariableType = false
 reportUnknownArgumentType = false
 reportPrivateUsage = "warning"
-pythonVersion = "3.12"
+pythonVersion = "3.13"
 pythonPlatform = "Darwin"
+
+[tool.pdm]
+
+[tool.vulture]
+min_confidence = 84
+paths = [
+    "schemaorg_lite",
+]
 
 [project]
 name = "schemaorg-lite"
-version = "0.1.16"
+version = "0.2.0"
 description = "Python functions for applied use of schema.org"
 dependencies = []
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 readme = "README.md"
 keywords = [
     "openschemas",
