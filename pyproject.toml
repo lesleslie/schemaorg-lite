@@ -50,14 +50,14 @@ paths = [
 deps-file = "pyproject.toml"
 exclude-deps = [
     "tomli-w",
-    "autotyping",
-    "pytest",
-    "pdm",
-    "uv",
-    "pdm-bump",
     "pyyaml",
     "pre-commit",
+    "pdm-bump",
+    "uv",
+    "pdm",
     "pyfiglet",
+    "pytest",
+    "autotyping",
 ]
 
 [tool.codespell]
@@ -70,13 +70,13 @@ target = [
     "schemaorg_lite",
 ]
 skips = [
-    "B602",
-    "B311",
-    "B301",
-    "B603",
-    "B404",
-    "B607",
     "B403",
+    "B607",
+    "B602",
+    "B301",
+    "B404",
+    "B311",
+    "B603",
 ]
 
 [tool.refurb]
@@ -114,7 +114,7 @@ paths = [
 
 [project]
 name = "schemaorg-lite"
-version = "0.2.0"
+version = "0.2.1"
 description = "Python functions for applied use of schema.org"
 dependencies = []
 requires-python = ">=3.13"
