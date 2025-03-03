@@ -1,6 +1,6 @@
 [dependency-groups]
 dev = [
-    "crackerjack>=0.10.4",
+    "crackerjack>=0.10.7",
 ]
 
 [tool.ruff]
@@ -49,15 +49,15 @@ paths = [
 ]
 deps-file = "pyproject.toml"
 exclude-deps = [
+    "pytest",
     "tomli-w",
+    "pyfiglet",
+    "pdm-bump",
+    "pdm",
+    "autotyping",
+    "uv",
     "pyyaml",
     "pre-commit",
-    "pdm-bump",
-    "uv",
-    "pdm",
-    "pyfiglet",
-    "pytest",
-    "autotyping",
 ]
 
 [tool.codespell]
@@ -70,12 +70,12 @@ target = [
     "schemaorg_lite",
 ]
 skips = [
-    "B403",
-    "B607",
-    "B602",
     "B301",
-    "B404",
+    "B403",
     "B311",
+    "B404",
+    "B602",
+    "B607",
     "B603",
 ]
 
@@ -104,8 +104,6 @@ reportPrivateUsage = "warning"
 pythonVersion = "3.13"
 pythonPlatform = "Darwin"
 
-[tool.pdm]
-
 [tool.vulture]
 min_confidence = 84
 paths = [
@@ -114,7 +112,7 @@ paths = [
 
 [project]
 name = "schemaorg-lite"
-version = "0.2.1"
+version = "0.2.2"
 description = "Python functions for applied use of schema.org"
 dependencies = []
 requires-python = ">=3.13"
