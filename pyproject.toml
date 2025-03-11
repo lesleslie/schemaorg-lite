@@ -50,19 +50,19 @@ paths = [
 ]
 deps-file = "pyproject.toml"
 exclude-deps = [
-    "pytest-mock",
+    "google-crc32c",
+    "pdm",
+    "autotyping",
+    "pytest",
+    "pdm-bump",
     "pytest-cov",
     "pyfiglet",
-    "pdm",
-    "pytest",
-    "google-crc32c",
-    "pytest-asyncio",
-    "pdm-bump",
-    "pre-commit",
-    "autotyping",
-    "uv",
+    "pytest-mock",
     "tomli-w",
     "pyyaml",
+    "uv",
+    "pre-commit",
+    "pytest-asyncio",
 ]
 
 [tool.codespell]
@@ -75,15 +75,15 @@ target = [
     "schemaorg_lite",
 ]
 skips = [
-    "B602",
-    "B603",
-    "B301",
-    "B607",
-    "B403",
-    "B704",
     "B404",
     "B311",
+    "B704",
+    "B602",
+    "B403",
+    "B603",
+    "B301",
     "B101",
+    "B607",
 ]
 
 [tool.refurb]
@@ -129,7 +129,7 @@ asyncio_default_fixture_loop_scope = "function"
 
 [project]
 name = "schemaorg-lite"
-version = "0.2.3"
+version = "0.3.0"
 description = "Python functions for applied use of schema.org"
 dependencies = []
 requires-python = ">=3.13"
