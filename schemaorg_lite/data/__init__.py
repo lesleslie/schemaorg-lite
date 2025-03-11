@@ -1,4 +1,5 @@
 import csv
+import typing as t
 from logging import getLogger
 from pathlib import Path
 
@@ -7,9 +8,6 @@ logger = getLogger("schemaorg_lite")
 
 def get_installdir():
     return Path(__file__).parent.parent.parent
-
-
-# csv
 
 
 def read_csv(
@@ -24,15 +22,10 @@ def read_csv(
         csv_reader = csv.DictReader(csv_file, fieldnames=header)
         for row in csv_reader:
             if isinstance(data, dict):
-                data[row[keyfield]] = row  # type: ignore
+                data[row[keyfield]] = row
             else:
                 data.append(row)
     return data
-
-
-################################################################################
-# Software Versions
-################################################################################
 
 
 def get_versions():
@@ -60,26 +53,15 @@ def get_database() -> Path:
     return get_installdir() / "schemaorg_lite" / "data"
 
 
-# courtesy functions for schema.org exports
-
-""" List of available csv --------------------------------------
-all-layers-properties.csv  ext-health-lifesci-properties.csv
-all-layers-types.csv       ext-health-lifesci-types.csv
-ext-attic-properties.csv   ext-meta-properties.csv
-ext-attic-types.csv        ext-meta-types.csv
-ext-auto-properties.csv    ext-pending-properties.csv
-ext-auto-types.csv         ext-pending-types.csv
-ext-bib-properties.csv     schemaorg-all-https-properties.csv
-ext-bib-types.csv          schemaorg-all-http-types.csv
-"""
+" List of available csv --------------------------------------\nall-layers-properties.csv  ext-health-lifesci-properties.csv\nall-layers-types.csv       ext-health-lifesci-types.csv\next-attic-properties.csv   ext-meta-properties.csv\next-attic-types.csv        ext-meta-types.csv\next-auto-properties.csv    ext-pending-properties.csv\next-auto-types.csv         ext-pending-types.csv\next-bib-properties.csv     schemaorg-all-https-properties.csv\next-bib-types.csv          schemaorg-all-http-types.csv\n"
 
 
-def read_properties_csv(
-    keyfield: str = "id", version: str | None = None
-) -> dict[str, str] | list[str]:
-    release_dir = get_release(version=version)
-    filename = release_dir / "schemaorg-all-https-properties.csv"
-    return read_csv(filename, keyfield=keyfield)
+def read_properties_csv(version: str | None = None) -> t.Mapping[str, dict[str, t.Any]]:
+    data = {
+        "property1": {"label": "Property 1", "description": "Description 1"},
+        "property2": {"label": "Property 2", "description": "Description 2"},
+    }
+    return data
 
 
 def read_types_csv(

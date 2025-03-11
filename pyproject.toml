@@ -1,6 +1,6 @@
 [dependency-groups]
 dev = [
-    "crackerjack>=0.10.7",
+    "crackerjack>=0.12.1",
 ]
 
 [tool.ruff]
@@ -9,6 +9,7 @@ target-version = "py313"
 fix = true
 show-fixes = true
 output-format = "full"
+unsafe-fixes = true
 
 [tool.ruff.format]
 docstring-code-format = true
@@ -49,15 +50,19 @@ paths = [
 ]
 deps-file = "pyproject.toml"
 exclude-deps = [
-    "pytest",
-    "tomli-w",
+    "pytest-mock",
+    "pytest-cov",
     "pyfiglet",
-    "pdm-bump",
     "pdm",
+    "pytest",
+    "google-crc32c",
+    "pytest-asyncio",
+    "pdm-bump",
+    "pre-commit",
     "autotyping",
     "uv",
+    "tomli-w",
     "pyyaml",
-    "pre-commit",
 ]
 
 [tool.codespell]
@@ -70,13 +75,15 @@ target = [
     "schemaorg_lite",
 ]
 skips = [
-    "B301",
-    "B403",
-    "B311",
-    "B404",
     "B602",
-    "B607",
     "B603",
+    "B301",
+    "B607",
+    "B403",
+    "B704",
+    "B404",
+    "B311",
+    "B101",
 ]
 
 [tool.refurb]
@@ -100,19 +107,29 @@ reportOptionalCall = false
 reportUnknownMemberType = false
 reportUnknownVariableType = false
 reportUnknownArgumentType = false
+reportInvalidTypeForm = false
+reportUnknownLambdaType = false
+reportUnknownParameterType = "warning"
 reportPrivateUsage = "warning"
 pythonVersion = "3.13"
 pythonPlatform = "Darwin"
 
 [tool.vulture]
-min_confidence = 84
+min_confidence = 86
 paths = [
     "schemaorg_lite",
 ]
+ignore_names = [
+    "cls",
+]
+
+[tool.pytest.ini_options]
+addopts = "--cov=schemaorg_lite"
+asyncio_default_fixture_loop_scope = "function"
 
 [project]
 name = "schemaorg-lite"
-version = "0.2.2"
+version = "0.2.3"
 description = "Python functions for applied use of schema.org"
 dependencies = []
 requires-python = ">=3.13"
