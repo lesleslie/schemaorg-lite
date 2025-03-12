@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = []
 lock_version = "4.5.0"
-content_hash = "sha256:d54310866d0eb1df42c4375312354922875ae02e6674fac68c9980d9b9bfd68a"
+content_hash = "sha256:92ab7d2a007ff080459274c5cb9f3d94044a3913d9f2b60ba1caf234e347920c"
 
 [[metadata.targets]]
 requires_python = ">=3.13"
@@ -124,7 +124,7 @@ files = [
 
 [[package]]
 name = "crackerjack"
-version = "0.12.1"
+version = "0.14.0"
 summary = ""
 dependencies = [
     "autotyping",
@@ -142,8 +142,8 @@ dependencies = [
     "uv",
 ]
 files = [
-    {file = "crackerjack-0.12.1-py3-none-any.whl", hash = "sha256:ae5471af008e82ad343958c1b40633110ff4918f1efb24281ce9c35d7cb822d3"},
-    {file = "crackerjack-0.12.1.tar.gz", hash = "sha256:cc5e6aceb685779e8cd11263719ae0aa67194ceba5fffc0a3f862c20b769e934"},
+    {file = "crackerjack-0.14.0-py3-none-any.whl", hash = "sha256:8783821524e05546d726c38467863db974c0ee7b165e5d99149f8a963d8a248a"},
+    {file = "crackerjack-0.14.0.tar.gz", hash = "sha256:59a3ad63b336546fffae3ef85b81e444524f2549bc0acbc9c97e033b7a7ea17b"},
 ]
 
 [[package]]

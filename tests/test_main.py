@@ -33,7 +33,6 @@ class TestSchema:
         mock_find_similar = mocker.patch("schemaorg_lite.main.find_similar_types")
         mock_find_similar.return_value = ["Person", "Organization"]
 
-        # Mock read_properties_csv to prevent FileNotFoundError
         mocker.patch("schemaorg_lite.main.read_properties_csv", return_value={})
 
         schema = Schema("NonExistentType")
@@ -81,8 +80,8 @@ class TestSchema:
         assert schema.type == "ValidType"
 
     def test_string_representation_returns_type_name(self) -> None:
-        schema = Schema(schema_type="Person", version="23.0")  # Ensure version is set
-        assert str(schema) == "Person (23.0)"  # Update expected value
+        schema = Schema(schema_type="Person", version="23.0")
+        assert str(schema) == "Person (23.0)"
 
     def test_default_version_set_to_latest(self, mocker: MockerFixture) -> None:
         mocker.patch(
@@ -122,7 +121,7 @@ class TestSchema:
         mock_logger.warning.assert_called_once_with(
             "Version 99.0 is not found in the data folder"
         )
-        assert schema.version == "14.0"  # Ensure it defaults to latest
+        assert schema.version == "14.0"
         mock_get_versions.assert_called_once()
         mock_read_types.assert_called_once()
 
@@ -142,7 +141,6 @@ class TestSchema:
 
         assert "testProperty" in schema._properties
         assert schema._properties["testProperty"]["property"] == "testProperty"
-        # Adjust the assertion to expect two calls
         assert mock_read_properties_csv.call_count == 2
 
     def test_load_type_invalid_type_spec(self, mocker: MockerFixture) -> None:
@@ -193,6 +191,5 @@ class TestSchema:
 
         assert "name" in schema._properties
         assert schema._properties["name"]["description"] == "testDescription"
-        # Adjust the assertion to expect two calls
         assert mock_read_properties_csv.call_count == 2
         mock_read_types.assert_called_once()
