@@ -1,6 +1,6 @@
 [dependency-groups]
 dev = [
-    "crackerjack>=0.14.0",
+    "crackerjack>=0.14.3",
 ]
 
 [tool.ruff]
@@ -35,7 +35,6 @@ extend-select = [
 [tool.ruff.lint.isort]
 no-lines-before = [
     "first-party",
-    "local-folder",
 ]
 
 [tool.ruff.lint.mccabe]
@@ -50,19 +49,19 @@ paths = [
 ]
 deps-file = "pyproject.toml"
 exclude-deps = [
+    "tomli-w",
+    "pytest-cov",
     "pyfiglet",
     "pyyaml",
-    "google-crc32c",
     "uv",
+    "pytest",
+    "google-crc32c",
+    "pdm",
+    "pdm-bump",
+    "pytest-mock",
     "autotyping",
     "pre-commit",
-    "pytest-mock",
     "pytest-asyncio",
-    "pdm",
-    "pytest-cov",
-    "tomli-w",
-    "pytest",
-    "pdm-bump",
 ]
 
 [tool.codespell]
@@ -76,14 +75,14 @@ target = [
 ]
 skips = [
     "B311",
-    "B607",
-    "B602",
-    "B603",
-    "B301",
-    "B403",
-    "B101",
     "B704",
+    "B607",
+    "B301",
+    "B101",
+    "B602",
+    "B403",
     "B404",
+    "B603",
 ]
 
 [tool.refurb]
@@ -129,7 +128,7 @@ asyncio_default_fixture_loop_scope = "function"
 
 [project]
 name = "schemaorg-lite"
-version = "0.3.1"
+version = "0.3.2"
 description = "Python functions for applied use of schema.org"
 dependencies = []
 requires-python = ">=3.13"
